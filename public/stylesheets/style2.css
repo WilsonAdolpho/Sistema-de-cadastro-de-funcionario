@@ -6,7 +6,7 @@
 body{
     width: 100%;
     height: 100vh;
-    background-color: hsla(246, 44%, 31%, 0.801);
+    background: linear-gradient(hsl(246, 44%, 31%), #20184e, #26216d);
     font-family: 'Poppins', sans-serif;
 
 }
