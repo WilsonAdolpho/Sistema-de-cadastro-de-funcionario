@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/stylesheets/style2.css">
+    <link rel="stylesheet" href="stylesheets/style2.css">
+    <script src="https://kit.fontawesome.com/6d761d66c3.js" crossorigin="anonymous"></script>
+
     <title>Document</title>
 </head>
 <body>
-    <h1>deu certo!</h1>
+    <div id="form">
+        <form action="">
+            
+            <h2 class="titulo">Acesse sua conta agora!</h2>
+           
+            <label for="email">Email</label>
+            <div class="input">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="email">
+            </div>
+
+            <label for="senha">Senha</label>
+            <div class="input">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="senha" name="senha" placeholder="senha">
+            </div>
+
+            
+
+            <div id="botão">
+                <button type="submit">Login</button>
+                <button  type="submit" >
+                    <a href="./cadastro" id="link">cadastro</a>
+                </button>
+            </div>
+
+
+        </form>
+    </div>
 </body>
 </html>

@@ -22,8 +22,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var loginRouter = require('./routes/func')
 var cadastroRouter = require('./routes/func')
+var listagemRouter = require('./routes/func')
+
 app.use('/', loginRouter);
 app.use('/cadastro', cadastroRouter);
+app.use('/listagem', listagemRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

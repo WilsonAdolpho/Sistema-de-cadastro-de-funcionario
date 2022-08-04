@@ -10,5 +10,8 @@ router.get('/', function(request, response){
 router.get('/cadastro', function(request, response){
     response.render('funcionario/cadastro')
 })
+router.get('/listagem', function(request, response){
+    response.render('funcionario/listagem')
+})
 
 module.exports = router;
