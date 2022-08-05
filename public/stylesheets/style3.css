@@ -5,3 +5,41 @@ body{
     background-color: rgba(43, 43, 121, 0.726);
 }
 
+.container{
+
+    width: 100%;  
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+.nav_bar{
+
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.tb{
+    
+    text-align: center;
+    flex-wrap: wrap;
+    /* border-top: 2px double black; */
+    width:100%;
+    padding: 5px;
+
+}
+
+.barraform{
+    border-top: 2px solid black;
+}
+.bottomstb{
+   display: flex;
+   
+   
+}
+ 
