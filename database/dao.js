@@ -10,7 +10,7 @@ const pool = require('./config')
 
 let operations = {
     list: function(){
-        console.log("listou")
+      return pool.promise().query('select * from funcionario')
     },
     findById: function(id){},
     save: function(funcionario){},

@@ -2,7 +2,7 @@
 
 body{
 
-    background-color: rgba(43, 43, 121, 0.726);
+    background-color: rgba(19, 19, 102, 0.733);
 }
 
 .container{
@@ -31,6 +31,8 @@ body{
     /* border-top: 2px double black; */
     width:100%;
     padding: 5px;
+    font-size: 17px;
+    border: solid;
 
 }
 
@@ -39,7 +41,14 @@ body{
 }
 .bottomstb{
    display: flex;
+  
    
    
 }
- 
+h1{
+    font-size: 40px;
+}
+.busca{
+    position: relative;
+    left: 250px;
+}
