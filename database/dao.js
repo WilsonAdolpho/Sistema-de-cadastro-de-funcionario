@@ -13,8 +13,12 @@ let operations = {
       return pool.promise().query('select * from funcionario')
     },
     findById: function(id){},
-    save: function(funcionario){},
+    save: function(funcionario){
+      return pool.promise().execute('insert into funcionario (nome, email, matricula, senha, contato) VALUES (?,?,?,?,?)', [funcionario.nome, funcionario.email, funcionario.matricula, funcionario.senha, funcionario.contato])
+    },
     update: function(funcionario){},
-    remove: function(id){},
+    remove: function(id){
+      return pool.promise().execute('delete from funcionario where id= ?', [id])
+    },
 }
 module.exports = operations

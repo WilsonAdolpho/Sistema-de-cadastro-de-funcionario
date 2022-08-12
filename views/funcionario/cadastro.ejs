@@ -11,39 +11,39 @@
 <body>
     <img src="images/WhatsApp Image 2022-08-02 at 18.43.43.jpeg" alt="" width="600" id="logo">
     <div id="form">
-        <form action="">
-            
+        <form method="post" action="/cadastro/save">
+            <input type="hidden" name="id" value="<%= funcionario.id %>">
             <h2 class="titulo">Venha para o nosso time!</h2>
            
             <label for="username">nome</label>
             <div class="input">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" id="username" name="username" placeholder="Nome">
+                <input type="text" id="username" name="nome" placeholder="Nome" value="<%= funcionario.nome %> ">
             </div>
 
             <label for="email">Email</label>
             <div class="input">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="text" id="email" name="email" placeholder="Email">
+                <input type="email" id="email" name="email" placeholder="Email" value="<%= funcionario.email %> ">
             </div>
 
             <label for="funcao">Senha</label>
             <div class="input">
                 <i class="fa-solid fa-lock"></i>
-                <input type="text" id="senha" name="senha" placeholder="Senha">
+                <input type="password" id="senha" name="senha" placeholder="Senha" value="<%= funcionario.senha %>">
             </div>
 
 
             <label for="matricula">matricula</label>
             <div class="input">
                 <i class="fa-solid fa-id-card"></i>
-                <input type="text" id="matricula" name="matricula" placeholder="Matricula">
+                <input type="text" id="matricula" name="matricula" placeholder="Matricula" value="<%= funcionario.matricula %>">
             </div>
 
             <label for="contato">Contato</label>
             <div class="input">
                 <i class="fa-solid fa-address-book"></i>
-                <input type="text" id="contato" name="contato" placeholder="Contato">
+                <input type="text" id="contato" name="contato" placeholder="Contato" value="<%= funcionario.contato %>">
             </div>
 
             <div id="botão">

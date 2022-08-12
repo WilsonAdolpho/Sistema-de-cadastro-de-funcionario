@@ -13,18 +13,20 @@
 
 
   <div class="container">
+    
     <nav class="nav_bar">
     
         <h1> Tela de Funcionários </h1>
-        
         <form  method="GET" action="">
           <div>
             <input type="search" name="nome" placeholder="Buscar">
             <button type="submit"> Pesquisar </button>
           </div>
         </form>
-        
-        <button type="submit"> Novo </button>
+        <a href="./cadastro">
+          <button type="submit"> Novo </button>
+        </a>
+       
     </nav>
     <div>
       <table class="tb">
@@ -48,15 +50,17 @@
               <td><%= listagem.matricula %></td>
               <td><%= listagem.contato %></td>
               <td>
-                <div class="bottomstb">
+                
   
-                  <form action="/func/delete" method="post" >
+                  <form action="/listagem/delete" method="post" >
                     <input type="hidden" name="id" value="<%= listagem.id %>">
                     <button type="submit"><i>Delete</i></button>
-                    <button type="submit"><i>Editar</i></button>
                   </form>
-      
-                </div>
+                  
+                  <button>
+                    <a href="./cadastro?id=<%= listagem.id %>">Edição</a>
+                  </button>
+                
               </td>
             </tr>
           <% } %>
