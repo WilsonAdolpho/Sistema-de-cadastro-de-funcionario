@@ -1,11 +1,17 @@
 const { render } = require('ejs')
+const { Router } = require('express')
 var express = require('express')
 var router = express.Router()
 var dao = require('../database/dao')
 
 
 router.get('/', function(request, response){
-    response.render('funcionario/login')
+    response.render('funcionario/login', {message: null})
+})
+
+router.post('/', function(request, response){
+    console.log(request.body)
+    response.redirect('/listagem')
 })
 
 router.post('/delete', function(request, response){
@@ -19,20 +25,19 @@ router.post('/delete', function(request, response){
      
  })
  
-router.get('/cadastro', function(request, response){
-    row = {
+router.get('/cadastro', async function(request, response){
+   let row = {
         id: '',
-        nome: 'vvv',
-        email: 'vvv@gmail.com',
-        senha: 'vvv',
-        matricula: 'vvv',
-        contato: 'vvv',
+        nome: '',
+        email: '',
+        senha: '',
+        matricula: '',
+        contato: '',
 
     }
     if( request.query.id){
-        console.log("Edição")
-    }else{
-        console.log("Novo cadastro")
+        [result] = await dao.findById(request.query.id)
+        row = result[0]
     }
     response.render('funcionario/cadastro', {funcionario: row})
 })
@@ -48,8 +53,17 @@ router.get('/listagem', function(request, response){
 })
 
 router.post('/save', function(request, response){
-    
-    dao.save(request.body)
+    let operacao;
+    if(request.body.id){
+        operacao = dao.update
+    }else{
+        operacao = dao.save
+    }
+
+
+
+
+    operacao(request.body)
     .then(([result])=>{
 
     }).catch(err=>{
@@ -58,5 +72,23 @@ router.post('/save', function(request, response){
     response.redirect('/listagem')
 })
 
+router.get('/search', function(request, response){
+    if(request.query.nome){
+        dao.search(request.query.nome)
+        .then(([rows])=>{
+            response.render('funcionario/listagem', {funcionario: rows})
+    
+        }).catch( err =>{
+            console.log(err)
+            response.redirect('listagem')
+        })
+    }else{
+        response.redirect('/listagem')
+    }
 
+
+
+     
+    
+})
 module.exports = router;

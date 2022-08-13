@@ -11,7 +11,12 @@
 </head>
 <body>
     <div id="form">
-        <form action="">
+        <% if (message) { %>
+         <p style="color: red">
+            <%= message %> 
+        </p>
+        <% } %>
+        <form action="/listagem" method="post">
             
             <h2 class="titulo">Acesse sua conta agora!</h2>
            
@@ -30,7 +35,8 @@
             
 
             <div id="botão">
-                <button type="submit">Login</button>
+                <button type="submit" value="login">Login</button>
+
                 <button  type="submit" >
                     <a href="./cadastro" id="link">Cadastro</a>
                 </button>

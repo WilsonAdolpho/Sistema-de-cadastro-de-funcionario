@@ -17,14 +17,14 @@
     <nav class="nav_bar">
     
         <h1> Tela de Funcionários </h1>
-        <form  method="GET" action="">
+        <form  method="GET" action="/listagem/search">
           <div>
             <input type="search" name="nome" placeholder="Buscar">
-            <button type="submit"> Pesquisar </button>
+            <button type="submit" class="btn btn-dark"> Pesquisar </button>
           </div>
         </form>
         <a href="./cadastro">
-          <button type="submit"> Novo </button>
+          <button type="submit" class="btn btn-dark"> Novo </button>
         </a>
        
     </nav>
@@ -51,16 +51,17 @@
               <td><%= listagem.contato %></td>
               <td>
                 
-  
+                  <div class="justify">
+
                   <form action="/listagem/delete" method="post" >
                     <input type="hidden" name="id" value="<%= listagem.id %>">
-                    <button type="submit"><i>Delete</i></button>
+                    <button type="submit" class="btn btn-dark"><i>Delete</i></button>
                   </form>
                   
-                  <button>
-                    <a href="./cadastro?id=<%= listagem.id %>">Edição</a>
+                  <button class="btn btn-dark">
+                    <a href="./cadastro?id=<%= listagem.id %>" id="link">Edição</a>
                   </button>
-                
+                  </div>
               </td>
             </tr>
           <% } %>
