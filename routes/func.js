@@ -3,16 +3,16 @@ const { Router } = require('express')
 var express = require('express')
 var router = express.Router()
 var dao = require('../database/dao')
-
+const passport = require('passport')
 
 router.get('/', function(request, response){
     response.render('funcionario/login', {message: null})
 })
 
-router.post('/', function(request, response){
-    console.log(request.body)
-    response.redirect('/listagem')
-})
+router.post('/', passport.authenticate('local', {
+    successRedirect: '/listagem',
+    failureRedirect: '/'
+}))
 
 router.post('/delete', function(request, response){
     dao.remove(request.body.id)

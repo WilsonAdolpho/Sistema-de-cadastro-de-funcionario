@@ -15,6 +15,9 @@ let operations = {
     findById: function(id){
       return pool.promise().query('select * from funcionario where id=?', [id])
     },
+    findByUsername: function(username){
+      return pool.promise().query('select * from funcionario where email=?', [username])
+    },
     save: function(funcionario){
       return pool.promise().execute('insert into funcionario (nome, email, matricula, senha, contato) VALUES (?,?,?,?,?)', [funcionario.nome, funcionario.email, funcionario.matricula, funcionario.senha, funcionario.contato])
     },
