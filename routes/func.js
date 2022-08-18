@@ -24,7 +24,7 @@ router.post('/delete', function(request, response){
     })
      
  })
- 
+
 router.get('/cadastro', async function(request, response){
    let row = {
         id: '',
