@@ -10,8 +10,8 @@ router.get('/', function(request, response){
 })
 
 router.post('/', passport.authenticate('local', {
-    successRedirect: '/listagem',
-    failureRedirect: '/'
+    successRedirect: '/',
+    failureRedirect: '/listagem'
 }))
 
 router.post('/delete', function(request, response){
